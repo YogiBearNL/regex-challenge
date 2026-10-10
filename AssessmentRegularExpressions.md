@@ -12,14 +12,16 @@ Original request:
 
 My answers to these questions:
 
-Although I am able to create these regular expressions, it does not always make sense to do so. Based on experience it's better to go for the most efficient way of onboarding logs using as less resources as possible and to make use of the internal functions of log management systems/platforms to achieve what you want to achieve.
-One other thing is to make sure the logs/messages can be provided in the most structured way by the teams configuring the log sources. For example raw logs vs CEF / JSON objects / Key-Values. Raw logs are the worst formats for parsing, and it's error prone e.g. when the vendor creates a new release and completely rewrites there syntax and positions of field values within a raw message.
-Named capturing groups make sense to keep track of what you are doing (if parsing is really necessary) this also helps for the operational teams which mostly use/understand the field names provided by the taxonomy of the vendor/product sending these logs.
-This also helps when a vendor is requested to assist in a service request for wich the 'raw' logs are necessary to be provided.
-CIM fields are created to support the SIEM with event correlation and to create use cases which can be reused within product categories like firewalls, proxies, A/V scanners, NIDS, Identity providers etc.
-It's wise to use aliases instead of renaming the original fields provided by the vendor.
-Next to this, time is very important. Looking at the syslog formats provided, it's unclear (based on the syslog header) as wo which timezone these events are provided.
-To verify delays, correlate events and such it's necessary to have a clear definition.
+Although I am able to create these regular expressions, it does not always make sense to do so.  
+Based on experience it's better to go for the most efficient way of onboarding logs using as less resources as possible and to make use of the internal functions of log management systems/platforms to achieve what you want to achieve.  
+One other thing is to make sure the logs/messages can be provided in the most structured way by the teams configuring the log sources.  
+For example raw logs vs CEF / JSON objects / Key-Values. Raw logs are the worst formats for parsing, and it's error prone e.g. when the vendor creates a new release and completely rewrites there syntax and positions of field values within a raw message.  
+Named capturing groups make sense to keep track of what you are doing (if parsing is really necessary) this also helps for the operational teams which mostly use/understand the field names provided by the taxonomy of the vendor/product sending these logs.  
+This also helps when a vendor is requested to assist in a service request for wich the 'raw' logs are necessary to be provided.  
+CIM fields are created to support the SIEM with event correlation and to create use cases which can be reused within product categories like firewalls, proxies, A/V scanners, NIDS, Identity providers etc.  
+It's wise to use aliases instead of renaming the original fields provided by the vendor.  
+Next to this, time is very important. Looking at the syslog formats provided, it's unclear (based on the syslog header) as wo which timezone these events are provided.  
+To verify delays, correlate events and such it's necessary to have a clear definition.  
 
 ## 1. Web Application Firewall log
 
